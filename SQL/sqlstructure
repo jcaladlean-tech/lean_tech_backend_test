@@ -1,0 +1,31 @@
+// Create database //
+CREATE DATABASE testDataBase;
+
+// Create tables //
+
+    // carrier table
+    CREATE TABLE carrier (
+        id SERIAL PRIMARY KEY,
+        scac VARCHAR(10),
+        name VARCHAR(30),
+        MC INTEGER,
+        DOT INTEGER,
+        FEIN INTEGER
+    );
+
+    // shipment table
+    CREATE TABLE shipment (
+        id SERIAL PRIMARY KEY,
+        date TIMESTAMP,
+        origin_country VARCHAR(30),
+        origin_state VARCHAR(30),
+        origin_city VARCHAR(30),
+        destination_country VARCHAR(30),
+        destination_state VARCHAR(30),
+        destination_city VARCHAR(30),
+        pick_up_date DATETIME,
+        delivery_date DATETIME,
+        status VARCHAR(20),
+        carrier_rate INTEGER,
+        carrier_id INTEGER REFERENCES carrier(id)
+    );

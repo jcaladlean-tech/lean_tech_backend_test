@@ -19,4 +19,6 @@
   * Hello World Urls
      * [hola mundo txt](http://localhost:8000/holamundo/txt)
      * [hola mundo json](http://localhost:8000/holamundo/json)
-    
+  
+### NoQSL and SQL
+These two exercises are in NoSQL and SQL folders, the document schema and the SQL commands for postgreSQL  

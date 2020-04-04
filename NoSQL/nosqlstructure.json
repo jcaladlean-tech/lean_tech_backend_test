@@ -3,7 +3,7 @@
   "date": "Date",
   "origin_country": "String",
   "origin_state": "String",
-  "orogin_city": "String",
+  "origin_city": "String",
   "destination_country": "String",
   "destination_state": "String",
   "destination_city": "String",
