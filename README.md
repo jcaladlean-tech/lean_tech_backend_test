@@ -21,4 +21,16 @@
      * [hola mundo json](http://localhost:8000/holamundo/json)
   
 ### NoQSL and SQL
-These two exercises are in NoSQL and SQL folders, the document schema and the SQL commands for postgreSQL  
+These two exercises are in NoSQL and SQL folders, the document schema and the SQL commands for postgreSQL
+
+### Demo
+This demo are created with the structure in the csv "Data", the urls for Get, Post, Put, Delete
+  * [carrier](localhost:8000/demo/carrier)
+  * [shipment](localhost:8000/demo/shipment)  
+  * Filters
+    * status
+    * carrier name
+    * origin state
+    * origin city
+    * destination state
+    * destination city
