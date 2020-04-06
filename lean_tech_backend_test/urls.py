@@ -17,14 +17,18 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path
 from apps.demo import urls as urls_sql
+from apps.user import urls as urls_user
+from apps.user.views import AuthToken
 
 url_api_rest = [
- path('demo/', include(urls_sql.router.urls)),
+    path('demo/', include(urls_sql.router.urls)),
+    path('user/', include(urls_user.router.urls)),
 ]
 
 urlpatterns = [
     path('', include(url_api_rest)),
-    path('holamundo/',include('hello_world.urls')),
+    path('auth/', AuthToken.as_view()),
+    path('holamundo/', include('hello_world.urls')),
     path('admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls')),
 ]

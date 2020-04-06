@@ -5,6 +5,7 @@ from django.db.models import Q
 from rest_framework import viewsets
 from .serializers import CarrierSerializer, ShipmentSerializer
 from .models import Carrier, Shipment
+from apps.user.permissions import AdminPermission, ReadOnlyPermission
 
 
 class CarrierViewSet(viewsets.ModelViewSet):
@@ -26,6 +27,7 @@ class ShipmentViewSet(viewsets.ModelViewSet):
     """docstring for CarrierViewSet"""
     queryset = Shipment.objects.all()
     serializer_class = ShipmentSerializer
+    permission_classes = [ReadOnlyPermission|AdminPermission]
 
     def update(self, request, *args, **kwargs):
         kwargs['partial'] = True

@@ -11,6 +11,7 @@
     ```
     python manage.py makemigrations
     python manage.py migrate
+    python manage.py groups
     python manage.py createsuperuser admin@admin.com
     ```
   * Run project
@@ -34,3 +35,13 @@ This demo are created with the structure in the csv "Data", the urls for Get, Po
     * origin city
     * destination state
     * destination city
+    
+### Authentication
+In the first step we run a command (python manage.py groups), that command was to create admin and readonly roles
+using the next endpoint to create user and get a token to authenticate
+
+  * [create and list user](localhost:8000/user/user) 
+    * It needs {username:"", email:"", password:""}
+  * [login to get token](localhost:8000/auth/) 
+    * It needs {username:"", password:""}
+    * use the token in Authorization header in this way ==>      token {token}
