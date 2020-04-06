@@ -12,6 +12,7 @@ class CarrierViewSet(viewsets.ModelViewSet):
     """docstring for CarrierViewSet"""
     queryset = Carrier.objects.all()
     serializer_class = CarrierSerializer
+    permission_classes = [ReadOnlyPermission | AdminPermission]
 
     def update(self, request, *args, **kwargs):
         kwargs['partial'] = True
